@@ -29,7 +29,7 @@ export const RANGO_NIVELES = {
 // 👇 Ampliado para incluir excepciones de horario
 export const EXCEPCIONES = {
   "20 ALAN AYALA": { cobertura: -1, volumen: -1 },
-  "15 LEANDRO ORTIZ": { horas_promedio_ruta: "5:10:00" },
-  "16 GABRIEL GOMEZ": { horas_promedio_ruta: "5:10:00" },
-  "17 JONATAN GARRIDO": { horas_promedio_ruta: "5:10:00" }
+  "15 LEANDRO ORTIZ": { horas_promedio_ruta: "5:00:00" },
+  "16 GABRIEL GOMEZ": { horas_promedio_ruta: "5:00:00" },
+  "17 JONATAN GARRIDO": { horas_promedio_ruta: "5:00:00" }
 };

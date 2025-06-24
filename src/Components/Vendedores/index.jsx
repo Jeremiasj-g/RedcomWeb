@@ -28,28 +28,30 @@ export default function Vendedores() {
   if (error) return <div className="text-center p-4 text-red-500">{error}</div>;
 
   return (
-    <div className="px-4 py-6 max-w-7xl mx-auto space-y-12">
-      <h1 className="text-3xl font-bold text-center">Dashboard de Vendedores</h1>
+    <div className="px-4 py-6 max-w-6xl mx-auto space-y-10">
+      <h1 className="text-2xl sm:text-3xl font-bold text-center">Dashboard de Vendedores</h1>
 
       <CategoriasTable />
 
       <section>
-        <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-6">
-          <h2 className="text-2xl font-bold">Vendedores</h2>
-          <input
-            type="text"
-            placeholder="Buscar vendedor..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full sm:w-[400px] border border-gray-300 rounded-md p-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+            <h2 className="text-xl sm:text-2xl font-bold">Vendedores</h2>
+            <input
+              type="text"
+              placeholder="Buscar vendedor..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="w-full sm:w-[280px] border border-gray-300 rounded-md p-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
 
-          <div className="flex items-center flex-wrap gap-2">
+          <div className="flex flex-wrap gap-2 sm:justify-end">
             {TAGS.map((tag) => (
               <button
                 key={tag.value}
                 onClick={() => setCategoriaFilter(tag.value)}
-                className={`px-4 py-2 text-sm rounded-full border transition-all duration-200 hover:cursor-pointer
+                className={`px-4 py-1.5 text-sm rounded-full border transition-all duration-200 hover:cursor-pointer
                   ${categoriaFilter === tag.value
                     ? tag.color || "bg-blue-500 text-white"
                     : "border-gray-300 text-gray-700 hover:bg-gray-100"
@@ -62,7 +64,7 @@ export default function Vendedores() {
         </div>
 
         <LayoutGroup>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-14">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
             <AnimatePresence>
               {vendedoresFiltrados.map((v) => (
                 <motion.div
@@ -71,7 +73,7 @@ export default function Vendedores() {
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.95 }}
-                  transition={{ duration: 0.2 }}
+                  transition={{ duration: 0.15 }}
                 >
                   <VendedorCard
                     vendedor={v}

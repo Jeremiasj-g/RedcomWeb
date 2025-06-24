@@ -193,7 +193,7 @@ export default function DetalleModal({ vendedor, onClose }) {
                           </span>
                         </span>
 
-                        <span className={`${check.cumple ? "text-green-600" : "text-red-600"}`}>
+                        <span className={`text-end ${check.cumple ? "text-green-600" : "text-red-600"}`}>
                           Alcanzado:{" "}
                           {check.valor.includes("vs")
                             ? check.valor.split("vs")[0].trim()
